@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from articles import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', views.index),
+    #url 자체를 변수처럼 동적으로 사용할 수 있는것이 변수url이다.
+    path('dinner/<str:name>/', views.dinner),
 ]
