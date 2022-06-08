@@ -22,6 +22,7 @@ def dinner(request, name):
 
 def review(request):
     return render(request, 'review.html')
+
 #request 는 요청한 모든데이터들이 들어있다.
 def create_review(request):
     content = request.POST.get('content')
