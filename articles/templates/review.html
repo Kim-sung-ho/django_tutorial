@@ -1,0 +1,7 @@
+
+<form action="{% url 'articles:create_review' %}" method="post">
+    {% csrf_token %}
+    <lable for="content">보낼 메시지</lable>
+    <input type="text" id="content" name="content"/>
+    <input type="submit"/>
+</form>

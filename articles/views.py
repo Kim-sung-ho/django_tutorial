@@ -19,3 +19,14 @@ def dinner(request, name):
         'menus': menus,
     }
     return render(request, 'dinner.html',context)
+
+def review(request):
+    return render(request, 'review.html')
+#request 는 요청한 모든데이터들이 들어있다.
+def create_review(request):
+    content = request.POST.get('content')
+    print(content)
+    context = {
+        'content': content,
+    }
+    return render(request, 'create_review.html', context)
