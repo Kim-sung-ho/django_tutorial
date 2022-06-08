@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 <h1>{{name}}님의 오늘 저녁은 {{pick.name}}입니다.</h1>
 
@@ -11,10 +11,18 @@
 </ul>
 
 {% if pick.price > 20000%}
-<h1>저녁은 비싼데요!</h1>
+<p>저녁은 비싼데요!</p>
 {% elif pick.price > 10000%}
-<h1>해볼만 하다</h1>
+<p>해볼만 하다</p>
 {% else %}
-<h1>저녁은 싸게 먹어요!</h1>
+<p>저녁은 싸게 먹어요!</p>
 {% endif %}
+
+<h1>리뷰리스트</h1>
+{%for article in articles%}
+<p>글 번호 : {{article.pk}}</p>
+<p>글 제목 : {{article.title}}</p>
+<p>글 내용 : {{article.content}}</p>
+<hr />
+{%endfor%}
 {% endblock %}

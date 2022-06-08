@@ -1,7 +1,25 @@
+{% extends 'base.html' %} {% block content %}
 
-<form action="{% url 'articles:create_review' %}" method="post">
+<form 
+    class= "form-group"
+    action="{% url 'articles:create_review' %}"
+    method="post"
+>
+    {%csrf_token%}
+    <lable  for = "title">Title</lable>
+    <input class = "form-control" type="text" name="title" />
+    <br />
+    <lable  for = "content">Content:</lable>
+    <textarea class = "form-control" name="content" rows="5" cols="30"></textarea>
+    <br />
+    <input type="submit" />
+</form>
+{% endblock %}
+
+
+{% comment %} <form action="{% url 'articles:create_review' %}" method="post">
     {% csrf_token %}
     <lable for="content">보낼 메시지</lable>
     <input type="text" id="content" name="content"/>
     <input type="submit"/>
-</form>
+</form> {% endcomment %}
